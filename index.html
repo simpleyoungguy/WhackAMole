@@ -1,0 +1,110 @@
+<!-- Whack A Mole! -->
+ <!-- used https://png2svg.com/ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack A Mole!</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" type="text/css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://www.svgrepo.com/show/289087/mole.svg">
+ </head>
+ <body>
+    <h1>Whack-a-mole! <span class="score">0</span></h1>
+    <h2 class="timesUp"></h2>
+    <button onclick="startGame()">Start!</button>
+
+    <div class="game">
+        <div class="hole hole1">
+            <div class="mole"></div>
+        </div>
+        <div class="hole hole2">
+            <div class="mole"></div>
+        </div>
+        <div class="hole hole3">
+            <div class="mole"></div>
+        </div>
+        <div class="hole hole4">
+            <div class="mole"></div>
+        </div>
+        <div class="hole hole5">
+            <div class="mole"></div>
+        </div>
+        <div class="hole hole6">
+            <div class="mole"></div>
+        </div>
+    </div>
+
+    <script>
+        const holes = document.querySelectorAll('.hole');
+        const scoreBoard = document.querySelector('.score');
+        const moles = document.querySelectorAll('.mole');
+        const timesUp = document.querySelector('.timesUp');
+        //how to not make same hole pop up again
+        let lastHole;
+        //how to stop function from running indefinitely?
+        let timeUp = false;
+        let score = 0;
+
+        //how much time inbetween moles?
+        function randomTime(min, max) {
+            return Math.round(Math.random() * (max - min) + min);
+        }
+
+        //which hole to pop up from? get random dom element
+        function randomHole(holes) {
+            const idx = Math.floor(Math.random() * holes.length);
+            const hole = holes[idx];
+            //
+            if(hole === lastHole) {
+                console.log('Ah nah that is the same one bud');
+                return randomHole(holes);
+            }
+
+            lastHole = hole;
+            return hole;
+        }
+
+        //how to get trolls to pop up?
+        function peep() {
+            const time = randomTime(200, 1000); //(50, 300) for expert mode
+            const hole = randomHole(holes);
+            hole.classList.add('up');
+            setTimeout(() => {
+                hole.classList.remove('up');
+                hole.querySelector('.mole').classList.remove('whacked'); //reset
+                if(!timeUp) peep(); //adding peep() will make it run indefinitely
+            }, time)
+        }
+
+        function startGame() {
+            timesUp.textContent = ``;
+            scoreBoard.textContent = 0;
+            timeUp = false;
+            score = 0;
+            peep();
+            setTimeout(() => {
+                timesUp.textContent = `Times Up!`;
+                timeUp = true;
+            }, 10000);
+        }
+
+        function bonk(e) {
+            //what is isTrusted? for verifying if click is done legititmately
+            if (!e.isTrusted) return; //someone faking click on JavaScript
+            
+            //Ignore click if mole already whacked
+            if (this.classList.contains('whacked')) return;
+
+            score++;
+            this.classList.add('whacked'); //mark mole as whacked
+            this.classList.remove('up');
+            scoreBoard.textContent = score;
+            // console.log(e);
+        }
+
+        moles.forEach(mole => mole.addEventListener('click', bonk));
+    </script>
+ </body>
+ </html>
