@@ -19,6 +19,7 @@ h1 {
     font-size: calc(8vh + 1rem);
     line-height: 1;
     margin-bottom: 0;
+    color: white;
 }
 
 .score {
@@ -71,13 +72,35 @@ h1 {
     top: 0;
 }
 
-button, h2 {
+button {
     display: block;
     text-align: center;
     font-size: large;
     margin: 2px auto;
     width: 100px;
     height: 30px;
+    border-radius: 1rem;
+    border: none;
+    background: #71b863;
+    box-shadow: 0 5px #999;
+    color: white;
+    cursor: pointer;
+}
+
+button:active {
+    background: #71b863b7;
+    transform: translateY(0.5rem);
+}
+
+h2 {
+    display: block;
+    text-align: center;
+    font-size: large;
+    margin: 2px auto;
+    width: 100px;
+    height: 30px;
+    color: white;
+    line-height: 30px;
 }
 
 .desc {
