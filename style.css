@@ -1,7 +1,7 @@
 html {
     box-sizing: border-box;
     font-size: 10px;
-    background: #00b7d4;
+    background: linear-gradient(90deg, #00b7d4, #005b90);
 }
 
 *, *:before, *:after {
@@ -81,7 +81,8 @@ button {
     height: 30px;
     border-radius: 1rem;
     border: none;
-    background: #71b863;
+    /* background: #71b863; */
+    background: linear-gradient(45deg, #71b863, #51bf83);
     box-shadow: 0 5px #999;
     color: white;
     cursor: pointer;
