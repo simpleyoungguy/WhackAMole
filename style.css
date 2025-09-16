@@ -1,10 +1,7 @@
 html {
     box-sizing: border-box;
     font-size: 10px;
-    background: linear-gradient(90deg, #00b7d4, #005b90);
-    background: -webkit-linear-gradient(0deg, #00b7d4, #005b90);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: #00b7d4;
 }
 
 *, *:before, *:after {
