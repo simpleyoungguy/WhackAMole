@@ -86,13 +86,14 @@ button {
     border: none;
     /* background: #71b863; */
     background: linear-gradient(45deg, #71b863, #51bf83);
-    box-shadow: 0 5px #999;
+    box-shadow: 0 5px #4c4c4c;
     color: white;
     cursor: pointer;
 }
 
 button:active {
     background: #71b863b7;
+    box-shadow: 0 2px #4c4c4c;
     transform: translateY(0.5rem);
 }
 
