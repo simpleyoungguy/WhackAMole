@@ -11,7 +11,8 @@ html {
 body {
     padding: 0;
     margin: 0;
-    font-family: 'Amatic SC', cursive;
+    font-family: "Carter One", system-ui;
+    /* text-shadow: 4px 4px #000000; */
 }
 
 .wrapper {
@@ -114,8 +115,9 @@ h2 {
 }
 
 .desc {
-    width: 400px;
+    width: calc(95vw + 1rem);
     text-align: center;
+    font-size: calc(1vh + 1rem);
 }
 
 @media only screen and (max-width: 450px) {
@@ -128,5 +130,9 @@ h2 {
   .hole:after {
     height: calc(6vh + 1rem);
     background-position: center;
+  }
+  h1 {
+    font-size: calc(4vh + 1rem);
+    margin-bottom: 1rem;
   }
 }
