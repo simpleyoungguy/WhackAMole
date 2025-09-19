@@ -67,12 +67,12 @@ h1 {
 }
 
 .mole {
-    background: url('troll.svg') bottom center no-repeat;
+    background: url('papertroll.svg') bottom center no-repeat;
     background-size: 60%;
     position: absolute;
-    top: 70%;
+    top: 90%;
     width: 100%;
-    height: 90%;
+    height: 100%;
     transition: all 0.4s;
 }
 
