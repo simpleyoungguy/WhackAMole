@@ -61,6 +61,12 @@
         let timeUp = false;
         let score = 0;
 
+        // bgm: Unused Shop Loop by Steven O'Brien | https://www.steven-obrien.net/
+        // Music promoted by https://www.chosic.com/free-music/all/
+        // Creative Commons CC BY-ND 4.0
+        // https://creativecommons.org/licenses/by-nd/4.0/
+        const bgm = new Audio('bgm.mp3');
+
         //how much time inbetween moles?
         function randomTime(min, max) {
             return Math.round(Math.random() * (max - min) + min);
@@ -97,10 +103,13 @@
             scoreBoard.textContent = 0;
             timeUp = false;
             score = 0;
+            bgm.currentTime = 4.3;
+            bgm.play();
             peep();
             setTimeout(() => {
                 timesUp.textContent = `Times Up!`;
                 timeUp = true;
+                bgm.pause();
             }, 10000);
         }
 
