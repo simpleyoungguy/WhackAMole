@@ -95,7 +95,7 @@ button {
     margin: 2vh auto;
     width: 150px;
     height: 60px;
-    border-radius: 3rem;
+    border-radius: 2rem;
     border: none;
     /* background: #71b863; */
     background: linear-gradient(45deg, #71b863, #51bf83);
