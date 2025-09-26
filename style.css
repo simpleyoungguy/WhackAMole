@@ -24,7 +24,7 @@ h1 {
     text-align: center;
     font-size: calc(8vh + 1rem);
     line-height: 1;
-    margin-bottom: 0;
+    margin: 1rem 0 0 0;
     color: white;
 }
 
@@ -82,13 +82,14 @@ h1 {
 }
 
 button {
+    font-family: "Carter One", system-ui;
     display: block;
     text-align: center;
-    font-size: large;
-    margin: 2px auto;
-    width: 100px;
-    height: 30px;
-    border-radius: 1rem;
+    font-size: 3.157rem;
+    margin: 2vh auto;
+    width: 150px;
+    height: 60px;
+    border-radius: 3rem;
     border: none;
     /* background: #71b863; */
     background: linear-gradient(45deg, #71b863, #51bf83);
@@ -134,5 +135,9 @@ h2 {
   h1 {
     font-size: calc(4vh + 1rem);
     margin-bottom: 1rem;
+  }
+
+  button {
+    margin-top: 50px;
   }
 }
