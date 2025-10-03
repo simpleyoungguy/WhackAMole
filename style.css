@@ -4,7 +4,7 @@ html {
     height: 100%;
     box-sizing: border-box;
     font-size: 10px;
-    background: #00b7d4;
+    background: linear-gradient(hsl(0 0% 0% / 0.2)), linear-gradient(180deg, #35dcbb, #00cace) border-box;
 }
 
 *, *:before, *:after {
