@@ -4,7 +4,31 @@ html {
     height: 100%;
     box-sizing: border-box;
     font-size: 10px;
-    background: linear-gradient(hsl(0 0% 0% / 0.2)), linear-gradient(180deg, #35dcbb, #00cace) border-box;
+    background-color: #06a3a2;
+
+    /* Old WebKit (Safari 4-5, Chrome 1-9) */
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#35dcbb), to(#00cace));
+
+    /* Newer WebKit (Safari 5.1+, Chrome 10-25) */
+    background-image: -webkit-linear-gradient(180deg, #35dcbb, #00cace);
+
+    /* Firefox (3.6 - 15) */
+    background-image: -moz-linear-gradient(180deg, #35dcbb, #00cace);
+
+    /* Opera (11.1 - 11.5) */
+    background-image: -o-linear-gradient(180deg, #35dcbb, #00cace);
+
+    /* Internet Explorer 10+ */
+    background-image: -ms-linear-gradient(180deg, #35dcbb, #00cace);
+
+
+    /* Background origin and clip */
+    background-origin: border-box;
+    background-clip: border-box;
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      linear-gradient(180deg, #35dcbb, #00cace);
+
 }
 
 *, *:before, *:after {
